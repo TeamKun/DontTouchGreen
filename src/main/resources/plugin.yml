@@ -1,0 +1,4 @@
+name: DontTouchGreen
+version: '${project.version}'
+main: net.kunmc.lab.donttouchgreen.DontTouchGreen
+api-version: 1.16
