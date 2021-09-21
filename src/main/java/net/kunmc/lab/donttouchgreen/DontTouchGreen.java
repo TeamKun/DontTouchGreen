@@ -140,6 +140,9 @@ public final class DontTouchGreen extends JavaPlugin {
         add(EntityType.ZOMBIE_VILLAGER);
         add(EntityType.ZOMBIE_HORSE);
         add(EntityType.PARROT);
+        add(EntityType.TURTLE);
+        add(EntityType.GUARDIAN);
+        add(EntityType.DROWNED);
     }};
 
     @Override
