@@ -20,7 +20,7 @@ public class Util {
         new BukkitRunnable() {
             @Override
             public void run() {
-                p.damage(p.getHealth());
+                p.damage(p.getHealthScale());
             }
         }.runTask(DontTouchGreen.instance);
     }

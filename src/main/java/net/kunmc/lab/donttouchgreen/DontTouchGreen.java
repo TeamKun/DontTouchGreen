@@ -2,7 +2,8 @@ package net.kunmc.lab.donttouchgreen;
 
 import dev.kotx.flylib.FlyLib;
 import net.kunmc.lab.donttouchgreen.command.MainCommand;
-import net.kunmc.lab.donttouchgreen.listener.EntityDamageByEntityListener;
+import net.kunmc.lab.donttouchgreen.listener.PlayerDamageToEntity;
+import net.kunmc.lab.donttouchgreen.listener.PlayerDamagedByEntity;
 import net.kunmc.lab.donttouchgreen.listener.PlayerInteractListener;
 import net.kunmc.lab.donttouchgreen.task.CheckUnderfootTask;
 import net.kunmc.lab.donttouchgreen.task.DetectEntityCollisionTask;
@@ -150,7 +151,9 @@ public final class DontTouchGreen extends JavaPlugin {
         new DetectTouchingWallTask().runTaskTimerAsynchronously(this, 0, 0);
 
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
-        getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDamageToEntity(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDamageToEntity(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDamagedByEntity(), this);
 
         FlyLib.create(this, builder -> {
             builder.command(new MainCommand());
