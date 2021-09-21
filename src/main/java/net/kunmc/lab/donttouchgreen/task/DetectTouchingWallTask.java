@@ -1,5 +1,6 @@
 package net.kunmc.lab.donttouchgreen.task;
 
+import net.kunmc.lab.donttouchgreen.Config;
 import net.kunmc.lab.donttouchgreen.DontTouchGreen;
 import net.kunmc.lab.donttouchgreen.Util;
 import org.bukkit.Location;
@@ -9,6 +10,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class DetectTouchingWallTask extends BukkitRunnable {
     @Override
     public void run() {
+        if (!Config.againstTheWall) {
+            return;
+        }
+       
         Util.getPlayerList().forEach(p -> {
             for (int y = 0; y < 2; y++) {
                 for (int x = -1; x < 2; x++) {

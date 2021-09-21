@@ -1,5 +1,6 @@
 package net.kunmc.lab.donttouchgreen.task;
 
+import net.kunmc.lab.donttouchgreen.Config;
 import net.kunmc.lab.donttouchgreen.DontTouchGreen;
 import net.kunmc.lab.donttouchgreen.Util;
 import org.bukkit.entity.EntityType;
@@ -9,6 +10,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class DetectEntityCollisionTask extends BukkitRunnable {
     @Override
     public void run() {
+        if (!Config.collideWithMob) {
+            return;
+        }
+       
         Util.getPlayerList().forEach(p -> {
             new BukkitRunnable() {
                 @Override

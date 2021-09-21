@@ -1,5 +1,7 @@
 package net.kunmc.lab.donttouchgreen;
 
+import dev.kotx.flylib.FlyLib;
+import net.kunmc.lab.donttouchgreen.command.MainCommand;
 import net.kunmc.lab.donttouchgreen.listener.EntityDamageByEntityListener;
 import net.kunmc.lab.donttouchgreen.listener.PlayerInteractListener;
 import net.kunmc.lab.donttouchgreen.task.CheckUnderfootTask;
@@ -149,6 +151,10 @@ public final class DontTouchGreen extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
         getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
+
+        FlyLib.create(this, builder -> {
+            builder.command(new MainCommand());
+        });
     }
 
     @Override

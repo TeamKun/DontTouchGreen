@@ -1,5 +1,6 @@
 package net.kunmc.lab.donttouchgreen.task;
 
+import net.kunmc.lab.donttouchgreen.Config;
 import net.kunmc.lab.donttouchgreen.DontTouchGreen;
 import net.kunmc.lab.donttouchgreen.Util;
 import org.bukkit.Location;
@@ -9,6 +10,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class CheckUnderfootTask extends BukkitRunnable {
     @Override
     public void run() {
+        if (!Config.stepOnBlock) {
+            return;
+        }
+       
         Util.getPlayerList().forEach(p -> {
             Location loc = p.getLocation();
             if (p.isInsideVehicle()) {

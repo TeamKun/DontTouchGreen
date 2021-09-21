@@ -1,5 +1,6 @@
 package net.kunmc.lab.donttouchgreen.listener;
 
+import net.kunmc.lab.donttouchgreen.Config;
 import net.kunmc.lab.donttouchgreen.DontTouchGreen;
 import net.kunmc.lab.donttouchgreen.Util;
 import org.bukkit.Material;
@@ -12,6 +13,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class PlayerInteractListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e) {
+        if (!Config.interactToBlock) {
+            return;
+        }
+       
         if (!e.getAction().equals(Action.LEFT_CLICK_BLOCK)) {
             return;
         }

@@ -1,5 +1,6 @@
 package net.kunmc.lab.donttouchgreen.listener;
 
+import net.kunmc.lab.donttouchgreen.Config;
 import net.kunmc.lab.donttouchgreen.DontTouchGreen;
 import net.kunmc.lab.donttouchgreen.Util;
 import org.bukkit.Material;
@@ -13,6 +14,10 @@ import org.bukkit.event.entity.EntityDamageEvent;
 public class EntityDamageByEntityListener implements Listener {
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageByEntityEvent e) {
+        if (!Config.attackToMob) {
+            return;
+        }
+       
         if (!e.getCause().equals(EntityDamageEvent.DamageCause.ENTITY_ATTACK)) {
             return;
         }
