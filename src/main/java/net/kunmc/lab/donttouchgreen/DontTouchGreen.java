@@ -1,5 +1,6 @@
 package net.kunmc.lab.donttouchgreen;
 
+import net.kunmc.lab.donttouchgreen.listener.EntityDamageByEntityListener;
 import net.kunmc.lab.donttouchgreen.listener.PlayerInteractListener;
 import net.kunmc.lab.donttouchgreen.task.CheckUnderfootTask;
 import net.kunmc.lab.donttouchgreen.task.DetectEntityCollisionTask;
@@ -147,6 +148,7 @@ public final class DontTouchGreen extends JavaPlugin {
         new DetectTouchingWallTask().runTaskTimerAsynchronously(this, 0, 0);
 
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
     }
 
     @Override
