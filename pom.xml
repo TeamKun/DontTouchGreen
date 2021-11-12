@@ -42,7 +42,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>dev.kotx.flylib</pattern>
-                                    <shadedPattern>net.kunmc.lab</shadedPattern>
+                                    <shadedPattern>net.kunmc.lab.donttouchgreen</shadedPattern>
                                     <excludes>
                                     </excludes>
                                 </relocation>
